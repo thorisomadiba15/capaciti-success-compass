@@ -1,26 +1,33 @@
-# Capaciti Success Compass
+Capaciti Success Hub
+Project Overview
+Capaciti Success Hub is an AI-powered productivity platform designed to support Capaciti students during the 1-Week AI Training Program. The platform helps learners stay organized, manage their daily tasks, summarize training notes, communicate professionally, and improve their productivity using AI-powered tools.
 
-Create a single AI-powered dashboard called Capaciti Success Hub.
-
-The platform helps Capaciti students manage their 1-Week AI Training Program. Include a Smart Email Generator for professional communication, a Meeting Notes Summarizer to extract key points and action items, and an AI Task Planner to organize daily study tasks and deadlines. Keep the design simple, modern, responsive, and professional. Include a Responsible AI disclaimer.
-
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/e66be580-261b-4584-8cb4-c42508665fd8).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
+Features
+Smart Email Generator
+Generates professional emails
+Supports formal, friendly, and persuasive tones
+Meeting Notes Summarizer
+Summarizes training notes and discussions
+Extracts key points, action items, and deadlines
+AI Task Planner
+Creates daily study schedules
+Helps prioritize tasks and deadlines
+AI Chatbot
+Provides learning support
+Answers questions related to AI, studies, and productivity
+Tools Used
+Lovable
+OpenAI / ChatGPT
+HTML
+CSS
+JavaScript
+Setup Instructions
+Open the application.
+Select a feature from the dashboard.
+Enter the required information.
+Click the Generate button.
+Review the AI-generated output.
+Team Members
+Thoriso Madiba
+Responsible AI Disclaimer
+This application is designed to assist learners during the Capaciti AI Training Program. AI-generated outputs should always be reviewed before use. The platform is intended to support learning and productivity and should not replace human judgment or decision-making.
