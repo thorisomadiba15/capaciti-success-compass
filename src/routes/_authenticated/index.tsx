@@ -1,10 +1,12 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { useQueryClient } from "@tanstack/react-query";
+import { supabase } from "@/integrations/supabase/client";
 import { useState } from "react";
-import { Mail, FileText, ListChecks, Sparkles, ShieldAlert, Copy, Loader2 } from "lucide-react";
+import { Mail, FileText, ListChecks, Sparkles, ShieldAlert, LogOut, Copy, Loader2 } from "lucide-react";
 import logo from "@/assets/capaciti-logo.webp";
 import { runAi } from "@/lib/ai.functions";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/_authenticated/")({
   head: () => ({
     meta: [
       { title: "Capaciti Success Hub — AI Training Dashboard" },
@@ -34,6 +36,14 @@ function Index() {
   const [outputs, setOutputs] = useState<Record<Tool, string>>({ email: "", notes: "", tasks: "" });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const navigate = useNavigate();
+  const queryClient = useQueryClient();
+  async function signOut() {
+    await queryClient.cancelQueries();
+    queryClient.clear();
+    await supabase.auth.signOut();
+    navigate({ to: "/auth", replace: true });
+  }
   const tool = TOOLS.find((t) => t.id === active)!;
 
   async function submit() {
@@ -59,6 +69,9 @@ function Index() {
             <h1 className="font-display text-lg font-bold leading-tight text-foreground">Capaciti Success Hub</h1>
             <p className="text-xs text-muted-foreground">1-Week AI Training Program</p>
           </div>
+          <button onClick={signOut} className="ml-auto inline-flex items-center gap-2 rounded-lg border px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted">
+            <LogOut className="h-4 w-4" /> Log out
+          </button>
         </div>
       </header>
 
