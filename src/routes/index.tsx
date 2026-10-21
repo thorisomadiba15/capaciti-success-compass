@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Mail, FileText, ListChecks, Sparkles, ShieldAlert, Copy, Loader2 } from "lucide-react";
+import logo from "@/assets/capaciti-logo.webp";
 import { runAi } from "@/lib/ai.functions";
 
 export const Route = createFileRoute("/")({
@@ -53,10 +54,8 @@ function Index() {
     <div className="min-h-screen bg-background">
       <header className="border-b bg-card">
         <div className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-4">
-          <div className="grid h-10 w-10 place-items-center rounded-lg bg-primary text-primary-foreground">
-            <Sparkles className="h-5 w-5" />
-          </div>
-          <div>
+          <img src={logo} alt="CAPACITI" className="h-8 w-auto" />
+          <div className="border-l pl-3">
             <h1 className="font-display text-lg font-bold leading-tight text-foreground">Capaciti Success Hub</h1>
             <p className="text-xs text-muted-foreground">1-Week AI Training Program</p>
           </div>
